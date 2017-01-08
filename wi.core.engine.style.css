@@ -1,0 +1,14 @@
+/**
+ * Style of egine module
+ * 
+ * @author André Ferreira <andrehrf@gmail.com>
+ * @license MIT
+ */
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
