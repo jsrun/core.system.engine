@@ -1,9 +1,16 @@
 /**
- * Frontend engine events
- * 
- * @author André Ferreira <andrehrf@gmail.com>
- * @license MIT
+ *  __          __  _    _____ _____  ______ 
+ *  \ \        / / | |  |_   _|  __ \|  ____|
+ *   \ \  /\  / /__| |__  | | | |  | | |__   
+ *    \ \/  \/ / _ \ '_ \ | | | |  | |  __|  
+ *     \  /\  /  __/ |_) || |_| |__| | |____ 
+ *      \/  \/ \___|_.__/_____|_____/|______|
+ *                                                                            
+ *  @author André Ferreira <andrehrf@gmail.com>
+ *  @license MIT
  */
+
+"use strict";
 
 (function(){
     /**
@@ -80,6 +87,18 @@
     webide.createNamespace = function(e) {
         return e = removeAccents(e), e = e.replace(/(\r\n|\n|\r|\t)/gm, "").replace(":", ""), e = html_entity_decode(e), e = strip_tags(e), e = e.replace(/(,|\.|\(|\))/gim, ""), e = e.replace(/(\s|\/|\\)/gi, "-"), e = e.replace(/\u0000/g, ""), e = e.replace(/('|\")/g, ""), e.toLowerCase()
     };
+    
+    $.fn.extend({
+        animateCss: function (animationName, cb) {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            this.addClass('animated ' + animationName).one(animationEnd, function() {
+                $(this).removeClass('animated ' + animationName);
+                
+                if(typeof cb == "function")
+                    cb();
+            });
+        }
+    });
         
     function removeAccents(e) {
         return e = e.replace(/&#(\w+);/gi, function(e, r) {
