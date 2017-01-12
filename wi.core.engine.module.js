@@ -25,4 +25,4 @@ module.exports = {
              __dirname + "/draggabilly.pkgd.min.js",
              __dirname + "/wi.core.engine.event.js"]
     }
-}
+};
