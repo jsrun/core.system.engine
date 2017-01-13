@@ -50,6 +50,21 @@
     };
     
     /**
+     * Function to get contents by XMLHttpRequest and return JSON 
+     *  
+     * @param string method (GET|POST|PUT|DELETE)
+     * @param string url
+     * @param object data
+     * @param function cb
+     * @return void
+     */
+    webide.getContentsJSON = function(method, url, data, cb){
+        webide.getContents(method, url, data, function(data){
+            cb(JSON.parse(data));
+        });
+    };
+    
+    /**
      * Function to send data by XMLHttpRequest
      * 
      * @param string url
