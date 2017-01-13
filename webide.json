@@ -1,0 +1,9 @@
+{
+    "name": "wi.core.engine",
+    "version": "0.0.1",
+    "author": "André Ferreira <andrehrf@gmail.com>",
+    "dependencies": {
+        "malihu/malihu-custom-scrollbar-plugin": "3.1.5",
+        "desandro/draggabilly": "2.1.1"
+    }
+}
