@@ -1,6 +1,6 @@
 {
     "name": "wi.core.engine",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "André Ferreira <andrehrf@gmail.com>",
     "dependencies": {
         "malihu/malihu-custom-scrollbar-plugin": "3.1.5",
