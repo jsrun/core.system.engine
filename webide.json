@@ -4,6 +4,7 @@
     "author": "André Ferreira <andrehrf@gmail.com>",
     "dependencies": {
         "malihu/malihu-custom-scrollbar-plugin": "3.1.5",
-        "desandro/draggabilly": "2.1.1"
+        "desandro/draggabilly": "2.1.1",
+        "iamceege/tooltipster": "4.1.5"
     }
 }
