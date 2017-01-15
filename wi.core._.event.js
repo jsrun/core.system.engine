@@ -12,7 +12,11 @@
 
 "use strict";
 
-(function(){
+(function($){
+    webide.onload = function(fn){
+        $(fn);
+    };
+    
     /**
      * Function to get contents by XMLHttpRequest
      * 
@@ -159,4 +163,4 @@
         for (a in t) t.hasOwnProperty(a) && (i[String.fromCharCode(a)] = t[a]);
         return i
     }
-})();
+})(jQuery);
