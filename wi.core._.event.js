@@ -15,13 +15,12 @@
 "use strict";
 
 var require = function(name){
-    return (window[name]) ? window[name]: null;
+    return (window[name]) ? window[name]: function(){};
 };
 
 (function($){
-    webide.onload = function(fn){
-        $(fn);
-    };
+    webide.io = io();
+    webide.onload = function(fn){ $(fn); };
     
     /**
      * Function to get contents by XMLHttpRequest
