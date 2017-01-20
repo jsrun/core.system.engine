@@ -14,7 +14,13 @@
 
 "use strict";
 
-module.exports = {    
+module.exports = {  
+    /**
+     * List of clients in socket.io
+     * @object
+     */
+    clients: {},
+    
     /**
      * List module assets
      * @type object
@@ -31,5 +37,42 @@ module.exports = {
              __dirname + "/tooltipster/dist/js/tooltipster.bundle.min.js",
              __dirname + "/draggabilly/dist/draggabilly.pkgd.min.js",
              __dirname + "/wi.core._.event.js"]
+    },
+    
+    /**
+     * Function to configure new events to sockets
+     * 
+     * @param function fn
+     * @return void
+     */
+    setSocketsEvents: function(fn){
+        for(let key in this.clients)
+            if(typeof fn == "function")
+                fn(this.clients[key]);
+    },
+    
+    /**
+     * Function to get a socket object
+     * 
+     * @param string id
+     * @return object|null
+     */
+    getSocket: function(id){
+        try{ return (this.clients[id]) ? this.clients[id] : null; } catch(e) { return null; }
+    },
+    
+    /**
+     * Module startup function
+     * 
+     * @param object app
+     * @return this
+     */
+    bootstrap: function(_this){ 
+        var __this = this;
+        
+        _this.io.on('connection', function(socket){ 
+            if(!__this.clients[socket.id])
+                __this.clients[socket.id] = socket;                            
+        });
     }
 };

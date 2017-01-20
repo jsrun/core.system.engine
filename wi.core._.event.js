@@ -44,9 +44,12 @@ var require = function(name){
         if(method === "POST"){
             var query = [];
 
-            if(typeof data === "object")
+            if(typeof data === "object"){
+                data.socket = webide.io.id;
+                
                 for(var key in data)
                     query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+            }
 
             xhr.open(method, url, true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -93,13 +96,42 @@ var require = function(name){
         
         var query = [];
 
-        if(typeof data === "object")
+        if(typeof data === "object"){
+            data.socket = webide.io.id;
+            
             for(var key in data)
                 query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+        }
 
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send(query.join('&')); 
+    },
+    
+    /**
+     * Functio to send data by XMLHttpRequest in JSON format
+     * 
+     * @param string url
+     * @param object data
+     * @param function cb
+     * @return void
+     */
+    webide.sendJSON = function(url, data, cb){
+        var xhr = new XMLHttpRequest();
+        
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){                   
+                if(typeof cb === "function")
+                    cb(JSON.parse(xhr.responseText));
+            }
+        }; 
+        
+        if(typeof data == "object")
+            data.socket = webide.io.id;
+        
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify(data)); 
     },
     
     /**
