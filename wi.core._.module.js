@@ -26,6 +26,7 @@ module.exports = {
               __dirname + "/wi.core._.style.css"],
         js: [__dirname + "/jquery-3.1.1.min.js", 
              __dirname + "/jquery-ui-1.12.1.min.js", 
+             __dirname + "/lodash-4.17.4.min.js",
              __dirname + "/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
              __dirname + "/tooltipster/dist/js/tooltipster.bundle.min.js",
              __dirname + "/draggabilly/dist/draggabilly.pkgd.min.js",

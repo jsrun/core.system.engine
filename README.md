@@ -16,8 +16,9 @@ WebIDE core engine
  
 ## Package
 
-* jQuery v3.1.1+ - https://jquery.com
-* jQuery UI v1.12.1+ - http://jqueryui.com
+* jQuery v3.1.1 - https://jquery.com
+* jQuery UI v1.12.1 - http://jqueryui.com
+* lodash v4.17.4 - https://lodash.com
 
 ## Dependencies
 
