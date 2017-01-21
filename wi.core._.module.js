@@ -17,9 +17,15 @@
 module.exports = {  
     /**
      * List of clients in socket.io
-     * @object
+     * @type object
      */
     clients: {},
+    
+    /**
+     * List of events to socket.io
+     * @type array
+     */
+    events: [],
     
     /**
      * List module assets
@@ -49,6 +55,9 @@ module.exports = {
         for(let key in this.clients)
             if(typeof fn == "function")
                 fn(this.clients[key]);
+        
+        if(typeof fn == "function")
+            this.events.push(fn);
     },
     
     /**
@@ -68,11 +77,21 @@ module.exports = {
      * @return this
      */
     bootstrap: function(_this){ 
-        var __this = this;
+        var __this = this; 
         
         _this.io.on('connection', function(socket){ 
-            if(!__this.clients[socket.id])
-                __this.clients[socket.id] = socket;                            
+            if(!__this.clients[socket.id]){
+                __this.clients[socket.id] = socket; 
+                
+                //Function to prevent the same event from being instantiated several times
+                socket.hasEvent = function(event){
+                    try{ return (this._events[event]); }
+                    catch(e){ return false; }
+                };
+                
+                for(let key in __this.events)
+                    __this.events[key](socket);
+            }
         });
     }
 };
