@@ -46,7 +46,7 @@ var require = function(name){
          * @return void
          */
         onload: function(fn){ 
-            $.ready(fn); 
+            $(fn); 
         },
         
         /**
