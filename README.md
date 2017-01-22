@@ -18,13 +18,12 @@ WebIDE core engine
 
 * jQuery v3.1.1 - https://jquery.com
 * jQuery UI v1.12.1 - http://jqueryui.com
-* lodash v4.17.4 - https://lodash.com
+* Lodash Core v4.17.4 - https://lodash.com
 
 ## Dependencies
 
-* malihu/malihu-custom-scrollbar-plugin 3.1.5+ - https://github.com/malihu/malihu-custom-scrollbar-plugin
-* desandro/draggabilly 2.1.1+ - https://github.com/desandro/draggabilly
-* iamceege/tooltipster 4.1.5+ - https://github.com/iamceege/tooltipster
+* malihu/malihu-custom-scrollbar-plugin v3.1.5+ - https://github.com/malihu/malihu-custom-scrollbar-plugin
+* iamceege/tooltipster v4.1.5+ - https://github.com/iamceege/tooltipster
 
 ## License
 

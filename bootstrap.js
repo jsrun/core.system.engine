@@ -31,18 +31,17 @@ module.exports = {
      * List module assets
      * @type object
      */
-    assets: {
-        css: [__dirname + "/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css",
-              __dirname + "/tooltipster/dist/css/tooltipster.bundle.min.css",
-              __dirname + "/jquery-ui-1.12.1.min.css",
-              __dirname + "/wi.core._.style.css"],
-        js: [__dirname + "/jquery-3.1.1.min.js", 
+    assetsCore: {
+        css: [__dirname + "/node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css",
+              __dirname + "/node_modules/tooltipster/dist/css/tooltipster.bundle.min.css",
+              __dirname + "/jquery-ui-1.12.1.min.css"],
+        js: [__dirname + "/node_modules/jquery/dist/jquery.min.js", 
              __dirname + "/jquery-ui-1.12.1.min.js", 
-             __dirname + "/lodash-4.17.4.min.js",
-             __dirname + "/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
-             __dirname + "/tooltipster/dist/js/tooltipster.bundle.min.js",
-             __dirname + "/draggabilly/dist/draggabilly.pkgd.min.js",
-             __dirname + "/wi.core._.event.js"]
+             __dirname + "/node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
+             __dirname + "/node_modules/tooltipster/dist/js/tooltipster.bundle.min.js",
+             __dirname + "/lodash.core.js",
+             __dirname + "/lib.js",
+             __dirname + "/core.js"]
     },
     
     /**
@@ -82,9 +81,8 @@ module.exports = {
         _this.io.on('connection', function(socket){ 
             if(!__this.clients[socket.id]){
                 __this.clients[socket.id] = socket; 
-                
-                //Function to prevent the same event from being instantiated several times
-                socket.hasEvent = function(event){
+                    
+                socket.hasEvent = function(event){//Function to prevent the same event from being instantiated several times
                     try{ return (this._events[event]); }
                     catch(e){ return false; }
                 };

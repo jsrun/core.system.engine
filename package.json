@@ -1,0 +1,22 @@
+{
+    "name": "wi.core._",
+    "version": "0.2.1",
+    "description": "Atom packages and themes compatibility module",
+    "author": "André Ferreira <andrehrf@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jsrun/wi.core._"
+    },
+    "bugs": {
+        "url": "https://github.com/jsrun/wi.core._/issues"
+    },
+    "homepage": "https://github.com/jsrun/wi.core._",
+    "dependencies": {
+        "jquery": "^3.1.1",
+        "lodash": "^4.17.4",
+        "moment": "^2.17.1",
+        "malihu-custom-scrollbar-plugin": "^3.1.5",
+        "tooltipster": "^4.1.7"
+    }
+}
