@@ -239,7 +239,7 @@ var require = function(name){
          * @return string
          */
         createNamespace: function(e) {
-            return e = removeAccents(e), e = e.replace(/(\r\n|\n|\r|\t)/gm, "").replace(":", ""), e = html_entity_decode(e), e = strip_tags(e), e = e.replace(/(,|\.|\(|\))/gim, ""), e = e.replace(/(\s|\/|\\)/gi, "-"), e = e.replace(/\u0000/g, ""), e = e.replace(/('|\")/g, ""), e.toLowerCase()
+            return e = removeAccents(e), e = e.replace(/(\r\n|\n|\r|\t)/gm, "").replace(":", ""), e = html_entity_decode(e), e = strip_tags(e), e = e.replace(/(,|\.|\(|\))/gim, ""), e = e.replace(/(\s|\/|\\)/gi, "-"), e = e.replace(/\u0000/g, ""), e = e.replace(/('|\")/g, ""), e = e.replace(/&/g, ""), e.toLowerCase()
         }
     };
 })(jQuery);
