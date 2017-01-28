@@ -39,7 +39,7 @@ module.exports = {
              __dirname + "/jquery-ui-1.12.1.min.js", 
              __dirname + "/node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
              __dirname + "/node_modules/tooltipster/dist/js/tooltipster.bundle.min.js",
-             __dirname + "/lodash.core.js",
+             __dirname + "/lodash.min.js",
              __dirname + "/lib.js",
              __dirname + "/core.js"]
     },

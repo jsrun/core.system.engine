@@ -40,6 +40,12 @@ var require = function(name){
         io: io(),
         
         /**
+         * jQuery no conflict
+         * @type object
+         */
+        //"$": jQuery.noConflict(),
+        
+        /**
          * On load function
          * 
          * @param function fn
