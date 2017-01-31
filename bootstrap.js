@@ -75,20 +75,18 @@ module.exports = {
      * @param object app
      * @return this
      */
-    bootstrap: function(_this){ 
-        var __this = this; 
-        
-        _this.io.on('connection', function(socket){ 
-            if(!__this.clients[socket.id]){
-                __this.clients[socket.id] = socket; 
+    bootstrap: function(io, _){         
+        io.on('connection', function(socket){ 
+            if(!_.clients[socket.id]){
+                _.clients[socket.id] = socket; 
                     
                 socket.hasEvent = function(event){//Function to prevent the same event from being instantiated several times
-                    try{ return (this._events[event]); }
+                    try{ return (_._events[event]); }
                     catch(e){ return false; }
                 };
                 
-                for(let key in __this.events)
-                    __this.events[key](socket);
+                for(let key in _.events)
+                    _.events[key](socket);
             }
         });
     }
