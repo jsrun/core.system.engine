@@ -81,7 +81,7 @@ module.exports = {
                 _.clients[socket.id] = socket; 
                     
                 socket.hasEvent = function(event){//Function to prevent the same event from being instantiated several times
-                    try{ return (_._events[event]); }
+                    try{ return (socket._events[event]); }
                     catch(e){ return false; }
                 };
                 
