@@ -1,7 +1,7 @@
 {
     "name": "wi.core._",
-    "version": "0.2.2",
-    "description": "Atom packages and themes compatibility module",
+    "version": "0.2.3",
+    "description": "WebIDE core engine",
     "author": "André Ferreira <andrehrf@gmail.com>",
     "license": "MIT",
     "repository": {
