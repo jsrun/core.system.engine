@@ -139,7 +139,7 @@ var require = function(name){
                 }
             }; 
 
-            if(method === "POST"){
+            if(method === "POST" || method === "PUT" || method === "DELETE"){
                 var query = [];
 
                 if(typeof data === "object"){
